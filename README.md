@@ -1,3 +1,3 @@
 # commitlog
 
-快速生成变更日志
+Changelog generator powered by git-cliff.

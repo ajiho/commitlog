@@ -2,11 +2,24 @@
   "name": "commitlog",
   "version": "0.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "commitlog": "cli.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "description": ""
+  "description": "Changelog generator powered by git-cliff.",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "git-cliff": "^2.11.0",
+    "lilconfig": "^3.1.3",
+    "smol-toml": "^1.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
 }
