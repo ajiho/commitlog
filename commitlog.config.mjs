@@ -1,6 +1,6 @@
 export default {
   template: [
-    "scoped",
+    "detailed",
     {
       changelog: {
         header: "my-keepachangelogaaa",
