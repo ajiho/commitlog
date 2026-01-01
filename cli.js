@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import { loadConfig } from "./config.js";
 import pkg from "./package.json" with { type: "json" };
+import { runCommitLog } from "./index.js";
 
 const program = new Command();
 
@@ -15,7 +16,6 @@ program
     "Exclude files or directories (supports glob)"
   )
   .option("--dry-run", "Print actions without writing files")
-  .argument("<files...>", "Files or glob patterns")
   .addHelpText(
     "afterAll",
     `
@@ -30,17 +30,11 @@ Examples:
   .parse(process.argv);
 
 const opts = program.opts();
-const files = program.args;
 
 try {
-  const config = await loadConfig(opts.config);
+  const configs = await loadConfig(opts.config);
 
-  console.log(config);
-
-  //   await headnote(files, {
-  //     ...config,
-  //     ...opts,
-  //   });
+  runCommitLog(configs);
 } catch (error) {
   console.error(error.message);
   process.exit(1);

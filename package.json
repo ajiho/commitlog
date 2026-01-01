@@ -20,6 +20,8 @@
     "smol-toml": "^1.6.0"
   },
   "devDependencies": {
-    "prettier": "^3.7.4"
+    "lodash-es": "^4.17.22",
+    "prettier": "^3.7.4",
+    "tempy": "^3.1.0"
   }
 }
